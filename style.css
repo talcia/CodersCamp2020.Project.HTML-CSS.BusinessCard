@@ -1,0 +1,465 @@
+:root {
+    --blue: #213b52;
+    --lightblue: #d2e0ed;
+    --grey: #f2f6fa;
+    --yellow: #fcbf32;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+button {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2vh 1vw;
+    margin: 2vw 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 4%;
+    color: var(--blue);
+    background-color: var(--yellow);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--yellow);
+    background-color: var(--blue);
+}
+
+/* container for all items */
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "nav nav nav" "home home home" "main main main" "stack stack stack" "contact contact contact" "footer footer footer";
+}
+
+/* container for title and animation */
+#home {
+    grid-area: home;
+    background-color: var(--blue);
+    height: 60vh;
+}
+
+#home .container-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 45vh);
+    justify-content: center;
+    margin: 15vh;
+}
+
+#home .description h1 {
+    color: var(--lightblue);
+    font-size: 6vh;
+    padding-bottom: 3vh;
+}
+
+#home .description h2 {
+    color: var(--white);
+    font-size: 3vh;
+    padding-bottom: 3vh;
+}
+
+#home button:hover {
+    background-color: var(--lightblue);
+    color: var(--blue);
+}
+
+.animation {
+    position: relative;
+}
+
+.brain {
+    display: inline-block;
+}
+
+.brain img {
+    height: 30vh;
+    filter: brightness(170%);
+    transform: translateX(20%);
+    direction: ltr;
+}
+
+.animation i {
+    color: var(--lightblue);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    opacity: 0;
+    font-size: 0;
+}
+
+.animation .c1 {
+    left: 75%;
+    animation: icons1 3s 2s linear infinite;
+}
+
+.animation .c2 {
+    left: 65%;
+    animation: icons2 4s 2s linear infinite;
+}
+
+.animation .c3 {
+    left: 55%;
+    animation: icons2 3s 9s linear infinite;
+}
+
+.animation .c4 {
+    left: 45%;
+    animation: icons1 5s 7s linear infinite;
+}
+
+.animation .c5 {
+    left: 35%;
+    animation: icons2 4s 10s linear infinite;
+}
+
+.animation .c6 {
+    left: 70%;
+    animation: icons2 5s 6s linear infinite;
+}
+
+.animation .c7 {
+    left: 65%;
+    animation: icons2 3s 8s linear infinite;
+}
+
+.animation .c8 {
+    left: 40%;
+    animation: icons2 4s 11s linear infinite;
+}
+
+.animation .c9 {
+    left: 60%;
+    animation: icons2 2s 12s linear infinite;
+}
+
+.animation .c10 {
+    left: 50%;
+    animation: icons2 4s 5s linear infinite;
+}
+
+@keyframes icons1 {
+    from {
+        font-size: 0;
+        opacity: 1;
+    }
+    to {
+        font-size: 2rem;
+        transform: translateY(-1500%);
+        opacity: 1;
+    }
+}
+
+@keyframes icons2 {
+    from {
+        font-size: 0;
+        opacity: 1;
+    }
+    to {
+        font-size: 2rem;
+        transform: translateY(-1250%);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1267px) {
+    #home {
+        height: 80vh;
+        text-align: center;
+    }
+
+    #home .description {
+        position: relative;
+        top: 100%;
+    }
+
+    .animation {
+        transform: translate(-20%, -110%);
+    }
+}
+
+@media (max-width: 1267px) and (orientation: landscape) {
+    #home {
+        height: 70vh;
+        text-align: center;
+    }
+
+    #home .description {
+        width: 150%;
+        position: relative;
+        transform: translateX(-20%);
+        top: 10%;
+    }
+
+    #home .description h1 {
+        font-size: 1.5rem;
+    }
+
+    #home .description h2 {
+        font-size: 1rem;
+    }
+
+    .animation {
+        transform: translate(0, 10%);
+    }
+
+    .brain img {
+        height: 38vh;
+    }
+}
+
+/* main section with projects */
+#main {
+    min-height: 100vh;
+    width: 100%;
+    grid-area: main;
+    background-color: var(--grey);
+}
+
+.projects {
+    font-size: 6vh;
+    text-align: center;
+    font-weight: bold;
+    color: var(--blue);
+    padding: 5vh;
+}
+
+.project {
+    position: relative;
+    background-color: var(--lightblue);
+    width: 60%;
+    /* height: fit-content; */
+    margin: 7vh auto;
+    border-radius: 2%;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+#main .project img {
+    width: 40%;
+    object-fit: contain;
+    border-radius: 5%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.project .description {
+    width: 75%;
+}
+
+.project .description h2 {
+    font-size: 3rem;
+    padding: 5vh 8vh 3vh;
+    color: var(--blue);
+    width: fit-content;
+}
+
+.project .description p {
+    font-size: 1.25rem;
+    color: var(--blue);
+    width: 50%;
+    margin: 2vh 2vw 0 5vw;
+}
+
+.project .description button {
+    margin-left: 5vw;
+}
+
+@media (max-width: 950px) {
+    .project .description {
+        width: 100%;
+    }
+
+    .project .description p {
+        width: 85%;
+    }
+
+    #main .project img {
+        position: relative;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+        margin: 2vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .project {
+        width: 80%;
+    }
+
+    .project .description {
+        text-align: center;
+    }
+
+    #main .project img {
+        position: relative;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -5%);
+        margin: 2vh;
+    }
+}
+
+/* stack with technologies */
+#stack {
+    height: auto;
+    width: 100%;
+    grid-area: stack;
+    text-align: center;
+    background-color: var(--blue);
+    padding: 2vh 2vh 6vh;
+}
+
+#stack h2 {
+    color: var(--grey);
+    font-size: 2rem;
+    padding: 4vh 0;
+}
+
+/* container for every item in stack */
+.stack-container {
+    margin: 0 auto;
+    display: grid;
+    max-width: 50%;
+    grid-template-columns: repeat(auto-fill, minmax(20vh, 30vh));
+    justify-content: center;
+    align-items: center;
+}
+
+/* item in stack */
+.stack {
+    font-size: 15vh;
+    padding: 2vh;
+}
+
+.stack i {
+    color: var(--grey);
+    transition: 0.5s;
+}
+
+.stack i:hover {
+    color: var(--yellow);
+    transform: translateY(-20%);
+}
+
+/* conteiner for skill boxes */
+.stack .boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3vh;
+}
+
+/* every box in skill boxes */
+.stack .boxes .box {
+    height: 10px;
+    width: 10px;
+    background-color: var(--grey);
+    border-radius: 20%;
+    margin: 0 0.5vw;
+}
+
+.stack .boxes .box.active {
+    background-color: var(--yellow);
+}
+
+/* section with contact and form */
+#contact {
+    min-height: 80vh;
+    grid-area: contact;
+    text-align: center;
+    background-color: var(--grey);
+}
+
+/* contact with social media */
+.contact {
+    padding: 5vh;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    padding-bottom: 2vh;
+    color: var(--blue);
+}
+
+.contact a {
+    color: var(--yellow);
+    font-size: 2rem;
+    padding: 0 1vw;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    color: var(--blue);
+}
+
+/* form to contact */
+#contact form {
+    display: inline-block;
+    align-items: center;
+    max-width: 55%;
+}
+
+#contact .form div {
+    display: inline-block;
+    width: 100%;
+    text-align: start;
+    margin: 1vh 0;
+}
+
+#contact .form div input {
+    display: block;
+    width: 100%;
+    padding: 1vh;
+    margin-top: 1vh;
+}
+
+#contact .form div label {
+    color: var(--blue);
+}
+
+#contact .form div textarea {
+    display: block;
+    width: 100%;
+    height: 15vh;
+    padding: 1vh;
+    margin-top: 1vh;
+    border: 1px solid grey;
+    font-family: sans-serif;
+}
+
+#contact .form .names {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: start;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+    background-color: var(--blue);
+    padding: 5vh;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+}
