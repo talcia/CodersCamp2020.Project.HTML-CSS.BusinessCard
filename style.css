@@ -57,10 +57,6 @@ button:hover {
     margin-top: 10vh;
 }
 
-#home .description {
-    text-align: end;
-}
-
 #home .description h1 {
     color: var(--lightblue);
     font-size: 6vh;
